@@ -32,4 +32,10 @@ public class PlayerAnimations : MonoBehaviour
         anim.SetFloat(moveX, dir.x);
         anim.SetFloat(moveY, dir.y);
     }
+
+    public void ResetPlayerAnimation()
+    {
+        anim.SetTrigger(revived);
+        HandleMovingAnimation(Vector2.down);
+    }
 }
