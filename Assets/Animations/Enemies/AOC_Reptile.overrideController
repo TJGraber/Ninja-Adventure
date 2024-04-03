@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AOC_Reptile
+  m_Controller: {fileID: 9100000, guid: 4e96514df55e9bd439215104b3e0d056, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 81a4b97a21a69a94aa6c4575ad18ac26, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b112e5fbae0be9648a2494cbd0fad20f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bd964df7c0089fa44a9c60784717379e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6d5d8468831b5ec4d8e28280b40d8146, type: 2}
