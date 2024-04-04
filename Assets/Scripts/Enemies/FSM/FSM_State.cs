@@ -10,6 +10,12 @@ public class FSM_State
     public FSM_Action[] Actions;
     public FSM_Transition[] Transitions;
 
+    public void UpdateState(EnemyBrain brain)
+    {
+        ExecuteActions();
+        ExecuteTransitions(brain);
+    }
+
     void ExecuteActions()
     {
         for(int i = 0; i < Actions.Length; i++)
@@ -21,7 +27,7 @@ public class FSM_State
 
     void ExecuteTransitions(EnemyBrain brain)
     {
-        if (Transitions == null || Transitions.Length <= 0)
+        if (Transitions == null || Transitions.Length == 0)
         {
             return;
         }
@@ -32,11 +38,11 @@ public class FSM_State
 
             if (value)
             {
-
+                //Change to true state
             }
             else
             {
-
+                //Change to false state
             }
         }
     }
