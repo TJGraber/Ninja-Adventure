@@ -1197,6 +1197,8 @@ GameObject:
   - component: {fileID: 533096135}
   - component: {fileID: 533096136}
   - component: {fileID: 533096137}
+  - component: {fileID: 533096138}
+  - component: {fileID: 533096139}
   m_Layer: 6
   m_Name: Enemy_Beast
   m_TagString: Enemy
@@ -1371,7 +1373,17 @@ MonoBehaviour:
   - ID: 1
     Actions:
     - {fileID: 533096137}
-    Transitions: []
+    Transitions:
+    - Decision: {fileID: 533096138}
+      TrueState: 3
+      FalseState: 0
+  - ID: 3
+    Actions:
+    - {fileID: 533096139}
+    Transitions:
+    - Decision: {fileID: 533096138}
+      TrueState: 3
+      FalseState: 1
 --- !u!114 &533096137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,9 +1396,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deae8790a20f250418dbc36cc564f68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  wanderTime: 1
+  moveSpeed: 1
+  wanderTime: 1.5
   moveRange: {x: 2, y: 2}
+--- !u!114 &533096138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533096130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a34f5f973c79845a20fa5cd8f40a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroRange: 4
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &533096139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533096130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3827890dee76a5f4ea8d282a7ebb81ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseSpeed: 3
+  stoppingDistance: 1.5
 --- !u!1001 &563288677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3476,9 +3518,9 @@ GameObject:
   - component: {fileID: 1357000191}
   - component: {fileID: 1357000192}
   - component: {fileID: 1357000193}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
