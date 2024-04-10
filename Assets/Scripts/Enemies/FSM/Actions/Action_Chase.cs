@@ -11,21 +11,7 @@ public class Action_Chase : FSM_Action
 
     public override void Act()
     {
-        if (enemyBrain.Player == null)
-        {
-            return;
-        }
-
-        Vector3 direction = enemyBrain.Player.position - transform.position;
-
-        print(direction.magnitude);
-        print("testing1");
-
-        if (direction.magnitude >= stoppingDistance)
-        {
-            print("testing2");
-            transform.Translate(direction.normalized * (chaseSpeed * Time.deltaTime));
-        }
+        ChasePlayer();
     }
 
     private void Awake()
@@ -35,7 +21,7 @@ public class Action_Chase : FSM_Action
 
     void ChasePlayer()
     {
-        /*if (enemyBrain.Player == null)
+        if (enemyBrain.Player == null)
         {
             return;
         }
@@ -49,6 +35,6 @@ public class Action_Chase : FSM_Action
         {
             print("testing");
             transform.Translate(direction.normalized * (chaseSpeed * Time.deltaTime));
-        } */
+        }
     }
 }
